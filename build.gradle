@@ -22,13 +22,13 @@ plugins {
 	id 'com.palantir.docker' version '0.22.1'
 }
 
-group = 'siecola'
+group = 'hbortolim'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '15'
+sourceCompatibility = '11'
 
 bootJar {
 	baseName = 'curso_aws_project01'
-	version =  '1.1.0'
+	version =  '2.4.0'
 	mainClassName = "br.com.siecola.aws_project01.AwsProject01Application"
 }
 
@@ -54,6 +54,16 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation group: 'org.springframework', name: 'spring-jms', version: '5.3.22'
+
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.31'
+
+
+	implementation group: 'com.amazonaws', name: 'aws-java-sdk-sns', version: '1.12.376'
+	implementation group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version: '1.12.374'
+	implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.12.376'
+	implementation group: 'com.amazonaws', name: 'amazon-sqs-java-messaging-lib', version: '1.1.2'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
